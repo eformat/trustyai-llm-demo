@@ -40,25 +40,12 @@ oc apply -f guardrails.yaml
 
 ```bash
 ORCHESTRATOR_HEALTH_ROUTE=https://$(oc get routes guardrails-orchestrator-health -o jsonpath='{.spec.host}')
-curl -sk $ORCHESTRATOR_HEALTH_ROUTE/info -H "Authorization: Bearer $(oc whoami -t)" | jq
+curl -sk $ORCHESTRATOR_HEALTH_ROUTE/health -H "Authorization: Bearer $(oc whoami -t)" | jq
 ```
 Should return:
 ```json
 {
-  "services": {
-    "guardrails-detector-gibberish": {
-      "status": "HEALTHY"
-    },
-    "built-in-detector": {
-      "status": "HEALTHY"
-    },
-    "openai": {
-      "status": "HEALTHY"
-    },
-    "guardrails-detector-ibm-hap": {
-      "status": "HEALTHY"
-    }
-  }
+  "fms-guardrails-orchestr8": "0.16.0"
 }
 ```
 

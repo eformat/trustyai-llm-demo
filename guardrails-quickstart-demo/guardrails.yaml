@@ -5,10 +5,10 @@ metadata:
     security.opendatahub.io/enable-auth: 'true'
   name: guardrails-orchestrator
 spec:
-  autoConfig:
-      inferenceServiceToGuardrail: phi3
-      detectorServiceLabelToMatch: trustyai/guardrails
+  orchestratorConfig: guardrails-orchestrator-config
   enableBuiltInDetectors: true
   enableGuardrailsGateway: true
   logLevel: DEBUG
   replicas: 1
+  otelExporter:
+    otlpProtocol: grpc

@@ -7,6 +7,7 @@ metadata:
     opendatahub.io/recommended-accelerators: '["nvidia.com/gpu"]'
   labels:
     opendatahub.io/dashboard: 'true'
+    kueue.x-k8s.io/queue-name: unreserved
 spec:
   annotations:
     prometheus.io/port: '8000'
@@ -50,6 +51,7 @@ metadata:
   labels:
     opendatahub.io/dashboard: 'true'
     trustyai/guardrails: 'true'
+    kueue.x-k8s.io/queue-name: unreserved
   annotations:
     openshift.io/display-name: ibm-hate-and-profanity-detector
     serving.knative.openshift.io/enablePassthrough: 'true'
@@ -77,6 +79,7 @@ metadata:
   labels:
     opendatahub.io/dashboard: 'true'
     trustyai/guardrails: 'true'
+    kueue.x-k8s.io/queue-name: unreserved
   annotations:
     openshift.io/display-name: gibberish-detector
     serving.knative.openshift.io/enablePassthrough: 'true'
@@ -104,6 +107,7 @@ metadata:
   labels:
     opendatahub.io/dashboard: 'true'
     trustyai/guardrails: 'true'
+    kueue.x-k8s.io/queue-name: unreserved
   annotations:
     openshift.io/display-name: jailbreak-detector
     serving.knative.openshift.io/enablePassthrough: 'true'
